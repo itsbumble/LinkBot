@@ -55,9 +55,9 @@ root = tk.Tk()
 root.geometry("1000x500")
 root.title("LinkBot v1.0 by itsbumble")
 
-bg_color = "#000000"  # "amoled" black
-fg_color = "#ffffff"  # elephant gray
-button_bg_color = "#333333"
+bg_color = "#263238"  # Dark Blue Gray
+fg_color = "#FFFFFF"  # White
+button_bg_color = "#37474F"  # Darker Blue Gray
 
 root.config(bg=bg_color)
 
