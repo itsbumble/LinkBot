@@ -48,6 +48,9 @@ def clear_links():
     global all_links
     all_links = []
 
+def openfloppa():
+    webbrowser.open_new_tab("https://floppa.info")
+
 root = tk.Tk()
 root.geometry("1000x500")
 root.title("LinkBot v1.0 by itsbumble")
@@ -67,24 +70,27 @@ stack_frame = tk.Frame(root, bg=bg_color)
 stack_frame.pack(side=tk.LEFT, fill=tk.Y)
 
 # Entry for Number of Links
-entry_label = tk.Label(stack_frame, text="Enter Number of Links:", bg=bg_color, fg=fg_color, font=("Helvetica", 12))
+entry_label = tk.Label(stack_frame, text="enter number of links:", bg=bg_color, fg=fg_color, font=("Helvetica", 12))
 entry_label.pack(pady=10)
 
 entry = tk.Entry(stack_frame, width=10, bg=button_bg_color, fg=fg_color)
 entry.pack(pady=5)
 
 # Buttons
-button_generate = tk.Button(stack_frame, text="Generate Links", command=generate_links, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
+button_generate = tk.Button(stack_frame, text="generate links", command=generate_links, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
 button_generate.pack(pady=5)
 
-button_open = tk.Button(stack_frame, text="Open Links in Browser", command=open_links, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
+button_open = tk.Button(stack_frame, text="open links in browser", command=open_links, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
 button_open.pack(pady=5)
 
-button_copy = tk.Button(stack_frame, text="Copy Links", command=copy_links, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
+button_copy = tk.Button(stack_frame, text="copy links", command=copy_links, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
 button_copy.pack(pady=5)
 
-button_clear = tk.Button(stack_frame, text="Clear Links", command=clear_links, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
+button_clear = tk.Button(stack_frame, text="clear links", command=clear_links, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
 button_clear.pack(pady=5)
+
+button_creator = tk.Button(stack_frame, text="support me", command=openfloppa, bg=button_bg_color, fg=fg_color, font=("Helvetica", 12))
+button_creator.pack(side=tk.BOTTOM, anchor=tk.SW, pady=10)
 
 # Output Text Box
 text_frame = tk.Frame(root, bg=bg_color)
@@ -94,5 +100,7 @@ text = tk.Text(text_frame, wrap=tk.WORD, font=("Helvetica", 12), bg=button_bg_co
 text.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
 all_links = []
+
+
 
 root.mainloop()
