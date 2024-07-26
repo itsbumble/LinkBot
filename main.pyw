@@ -49,7 +49,7 @@ def clear_links():
     all_links = []
 
 def openfloppa():
-    webbrowser.open_new_tab("https://floppa.info")
+    webbrowser.open_new_tab("https://bumble.pink")
 
 root = tk.Tk()
 root.geometry("1000x500")
