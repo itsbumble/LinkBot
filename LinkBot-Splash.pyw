@@ -11,7 +11,7 @@ def show_splash_screen():
         (splash.winfo_screenheight() // 2) - 100
     ))
 
-    splash_label = tk.Label(splash, text="LinkBot v1.0 by itsbumble", font=("Helvetica", 24), bg="#263238", fg="#FFFFFF")
+    splash_label = tk.Label(splash, text="LinkBot v1.1 by itsbumble", font=("Helvetica", 24), bg="#263238", fg="#FFFFFF")
     splash_label.pack(expand=True, fill='both')
 
     splash.after(750, splash.destroy)
