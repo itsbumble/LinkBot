@@ -14,13 +14,13 @@ def show_splash_screen():
     splash_label = tk.Label(splash, text="LinkBot v1.0 by itsbumble", font=("Helvetica", 24), bg="#263238", fg="#FFFFFF")
     splash_label.pack(expand=True, fill='both')
 
-    splash.after(750, splash.destroy)  # Splash screen will disappear after 3 seconds
+    splash.after(750, splash.destroy)
     root.after(750, main_window)
 
     splash.mainloop()
 
 def main_window():
-    global root
+    global root, entry, base_url_entry, text
     root = tk.Tk()
     root.geometry("1000x500")
     root.title("LinkBot v1.0 by itsbumble")
@@ -38,6 +38,14 @@ def main_window():
     # Stack moved to the left with spacing
     stack_frame = tk.Frame(root, bg=bg_color)
     stack_frame.pack(side=tk.LEFT, fill=tk.Y)
+
+    # Entry for Base URL
+    base_url_label = tk.Label(stack_frame, text="enter base url:", bg=bg_color, fg=fg_color, font=("Helvetica", 12))
+    base_url_label.pack(pady=10)
+
+    base_url_entry = tk.Entry(stack_frame, width=30, bg=button_bg_color, fg=fg_color)
+    base_url_entry.pack(pady=5)
+    base_url_entry.insert(0, "https://example.com/XXXX.jpeg")  # Default value
 
     # Entry for Number of Links
     entry_label = tk.Label(stack_frame, text="enter number of links:", bg=bg_color, fg=fg_color, font=("Helvetica", 12))
@@ -84,8 +92,12 @@ def generate_links():
         messagebox.showerror("Error", "Please enter a valid number.")
         return
 
+    base_link = base_url_entry.get()
+    if "XXXX" not in base_link:
+        messagebox.showerror("Error", "Base URL must contain 'XXXX' as a placeholder for the number.")
+        return
+
     random_numbers = [random.randint(1, 3000) for _ in range(loop_range)]
-    base_link = "https://example.com/XXXX.jpeg"
     links = [base_link.replace("XXXX", str(num)) for num in random_numbers]
     link_text = "\n".join(links)
     text.config(state='normal')
