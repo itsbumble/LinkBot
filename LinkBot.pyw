@@ -13,8 +13,12 @@ def generate_links():
         messagebox.showerror("Error", "Please enter a valid number.")
         return
 
+    base_link = base_url_entry.get()
+    if "XXXX" not in base_link:
+        messagebox.showerror("Error", "Base URL must contain 'XXXX' as a placeholder for the number.")
+        return
+
     random_numbers = [random.randint(1, 3000) for _ in range(loop_range)]
-    base_link = "https://example.com/XXXX.jpeg"
     links = [base_link.replace("XXXX", str(num)) for num in random_numbers]
     link_text = "\n".join(links)
     text.config(state='normal')
@@ -69,6 +73,14 @@ spacing_frame.pack(side=tk.LEFT, fill=tk.Y)
 stack_frame = tk.Frame(root, bg=bg_color)
 stack_frame.pack(side=tk.LEFT, fill=tk.Y)
 
+# Entry for Base URL
+base_url_label = tk.Label(stack_frame, text="enter base url:", bg=bg_color, fg=fg_color, font=("Helvetica", 12))
+base_url_label.pack(pady=10)
+
+base_url_entry = tk.Entry(stack_frame, width=30, bg=button_bg_color, fg=fg_color)
+base_url_entry.pack(pady=5)
+base_url_entry.insert(0, "https://example.com/XXXX.jpeg")  # Default value
+
 # Entry for Number of Links
 entry_label = tk.Label(stack_frame, text="enter number of links:", bg=bg_color, fg=fg_color, font=("Helvetica", 12))
 entry_label.pack(pady=10)
@@ -100,7 +112,5 @@ text = tk.Text(text_frame, wrap=tk.WORD, font=("Helvetica", 12), bg=button_bg_co
 text.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
 all_links = []
-
-
 
 root.mainloop()
