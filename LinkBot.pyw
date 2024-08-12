@@ -57,7 +57,7 @@ def openfloppa():
 
 root = tk.Tk()
 root.geometry("1000x500")
-root.title("LinkBot v1.0 by itsbumble")
+root.title("LinkBot v1.1 by itsbumble")
 
 bg_color = "#263238"  # Dark Blue Gray
 fg_color = "#FFFFFF"  # White
