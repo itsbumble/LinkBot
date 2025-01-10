@@ -11,7 +11,7 @@ def show_splash_screen():
         (splash.winfo_screenheight() // 2) - 100
     ))
 
-    splash_label = tk.Label(splash, text="LinkBot v1.1 by itsbumble", font=("Helvetica", 24), bg="#263238", fg="#FFFFFF")
+    splash_label = tk.Label(splash, text="LinkBot v1.1.1 by itsbumble", font=("Helvetica", 24), bg="#263238", fg="#FFFFFF")
     splash_label.pack(expand=True, fill='both')
 
     splash.after(750, splash.destroy)
@@ -23,7 +23,7 @@ def main_window():
     global root, entry, base_url_entry, text
     root = tk.Tk()
     root.geometry("1000x500")
-    root.title("LinkBot v1.1 by itsbumble")
+    root.title("LinkBot v1.1.1 by itsbumble")
 
     bg_color = "#263238"  # Dark Blue Gray
     fg_color = "#FFFFFF"  # White
@@ -80,6 +80,8 @@ def main_window():
     global all_links
     all_links = []
 
+    text.config(state='disabled')
+
     root.mainloop()
 
 def generate_links():
@@ -119,7 +121,7 @@ def copy_links():
     if not all_links:
         return
 
-    link_text = "\n".join(all_links)
+    link_text = "\n ".join(all_links)
     root.clipboard_clear()
     root.clipboard_append(link_text)
     messagebox.showinfo("Links Copied", "Links have been copied to clipboard.")

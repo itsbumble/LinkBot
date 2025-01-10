@@ -40,7 +40,7 @@ def copy_links():
     if not all_links:
         return
 
-    link_text = "\n".join(all_links)
+    link_text = "\n ".join(all_links)
     root.clipboard_clear()
     root.clipboard_append(link_text)
     messagebox.showinfo("Links Copied", "Links have been copied to clipboard.")
@@ -57,7 +57,7 @@ def openfloppa():
 
 root = tk.Tk()
 root.geometry("1000x500")
-root.title("LinkBot v1.1 by itsbumble")
+root.title("LinkBot v1.1.1 by itsbumble")
 
 bg_color = "#263238"  # Dark Blue Gray
 fg_color = "#FFFFFF"  # White
@@ -112,5 +112,7 @@ text = tk.Text(text_frame, wrap=tk.WORD, font=("Helvetica", 12), bg=button_bg_co
 text.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
 all_links = []
+
+text.config(state='disabled')
 
 root.mainloop()
