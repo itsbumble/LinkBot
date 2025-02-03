@@ -1,5 +1,7 @@
 # LinkBot
-This is a program that generates links. It's something I made for a personal purpose. Try it out, I guess. It's probably useless for you.
-This helped me learn how to program, I guess? I don't know.
+This program opens a desired amount of URLs in a web browser based off of an inputted base URL.
 
-IF YOU FEEL LIKE CRASHING YOUR COMPUTER, TYPE IN A MASSIVE NUMBER (around 2000) and press Open Links in Browser!
+I originally created LinkBot to find a bunch of randomly named 4-number .jpg files on a web server at school, but possible use cases I've found over time include:
+- Crashing crappy computers
+- Trolling your friends
+- "Benchmarking"
