@@ -15,8 +15,7 @@ def generate_links():
 
     base_link = base_url_entry.get()
     if "XXXX" not in base_link:
-        messagebox.showerror("Error", "Base URL must contain 'XXXX' as a placeholder for the number.")
-        return
+        messagebox.showwarning("Warning", "Your Base URL should probably contain 'XXXX' as a placeholder for the number, but I'll let it slide.")  
 
     random_numbers = [random.randint(1, 3000) for _ in range(loop_range)]
     links = [base_link.replace("XXXX", str(num)) for num in random_numbers]
@@ -57,7 +56,7 @@ def openfloppa():
 
 root = tk.Tk()
 root.geometry("1000x500")
-root.title("LinkBot v1.1.1 by itsbumble")
+root.title("LinkBot v1.1.2 by itsbumble")
 
 bg_color = "#263238"  # Dark Blue Gray
 fg_color = "#FFFFFF"  # White

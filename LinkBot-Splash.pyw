@@ -11,7 +11,7 @@ def show_splash_screen():
         (splash.winfo_screenheight() // 2) - 100
     ))
 
-    splash_label = tk.Label(splash, text="LinkBot v1.1.1 by itsbumble", font=("Helvetica", 24), bg="#263238", fg="#FFFFFF")
+    splash_label = tk.Label(splash, text="LinkBot v1.1.2 by itsbumble", font=("Helvetica", 24), bg="#263238", fg="#FFFFFF")
     splash_label.pack(expand=True, fill='both')
 
     splash.after(750, splash.destroy)
@@ -23,7 +23,7 @@ def main_window():
     global root, entry, base_url_entry, text
     root = tk.Tk()
     root.geometry("1000x500")
-    root.title("LinkBot v1.1.1 by itsbumble")
+    root.title("LinkBot v1.1.2 by itsbumble")
 
     bg_color = "#263238"  # Dark Blue Gray
     fg_color = "#FFFFFF"  # White
@@ -96,8 +96,7 @@ def generate_links():
 
     base_link = base_url_entry.get()
     if "XXXX" not in base_link:
-        messagebox.showerror("Error", "Base URL must contain 'XXXX' as a placeholder for the number.")
-        return
+        messagebox.showwarning("Warning", "Your Base URL should probably contain 'XXXX' as a placeholder for the number, but I'll let it slide.")  
 
     random_numbers = [random.randint(1, 3000) for _ in range(loop_range)]
     links = [base_link.replace("XXXX", str(num)) for num in random_numbers]
